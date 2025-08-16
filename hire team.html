@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hire Team Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .navbar-brand img {
+            height: 100%;
+            width: 100%;
+            background-size: auto;
+            background-repeat: no-repeat;
+        }
+
+        a {
+            padding: 5vw;
+            color: black;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        a .nav-link:hover {
+            background-color: black;
+            color: white;
+            width: 9vw;
+            height: 2.8vw;
+            padding: 5px;
+            border: none;
+            text-align: center;
+        }
+
+        .nav-link {
+            font-size: 1rem;
+            color: black;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-link:hover {
+            background-color: black;
+            color: white;
+
+            border-radius: 5px;
+        }
+
+        nav i {
+            font-size: 1.5vw;
+            font-weight: 800;
+        }
+
+        #nav-btn {
+            background-color: black;
+            color: white;
+            width: 10vw;
+            height: 2.3vw;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            max-height: 90px;
+            width: auto;
+        }
+
+        #nav-btn:hover {
+            background-color: blue;
+            height: 2.5vw;
+            padding: 5px;
+        }
+
+        .show-menu {
+            display: block;
+            color: black;
+            font-weight: 500;
+            border-bottom: 3px solid #dadada;
+            cursor: pointer;
+        }
+
+        #menu-icon,
+        #close-icon {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 80px 10%;
+            background-color: #fff;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-content h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .hero-content h6 {
+            font-size: 24px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .features {
+            color: #222;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .btn-yellow {
+            background-color: #f6c90e;
+            color: black;
+            border: none;
+            padding: 10px 22px;
+            font-weight: 600;
+            border-radius: 5px;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .hover-box-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin: 60px auto;
+            max-width: 1200px;
+        }
+
+        .hover-box {
+            width: 350px;
+            height: 300px;
+            padding: 30px;
+            background-color: #f3f3f3;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            color: #000;
+            z-index: 0;
+        }
+
+        .hover-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/blue\ img.avif');
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: 0.4s;
+            z-index: -1;
+        }
+
+        .hover-box:hover::before {
+            opacity: 1;
+        }
+
+        .hover-box:hover {
+            color: white;
+        }
+
+        .hover-box h4 {
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .hover-box p {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1100px) {
+            .hover-box {
+                width: 100%;
+            }
+        }
+ .language-section {
+      width: 100%;
+      background-color: #f5f5f5;
+      padding: 30px 0;
+    }
+
+    .language-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .language-box {
+      background-color: #fff7f7;
+      height: 220px;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .language-box img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .language-box h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .language-box p {
+      margin: 0;
+      font-size: 14px;
+      color: #333;
+    }
+    /* .language-box img:hover {
+            transform: scale(0.2);
+        } */
+
+
+    @media (max-width: 1200px) {
+      .language-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media (max-width: 992px) {
+      .language-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .language-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .language-grid {
+        grid-template-columns: 1fr;
+      }
+    }    
+  
+/* Section with Blue Background */
+.pricing-section {
+   background-image: url('images/bg-1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  padding: 60px 0;
+  color: white;
+  text-align: center;
+}
+
+.pricing-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.subheading {
+  font-size: 16px;
+  color: #d1d1d1;
+  margin-bottom: 40px;
+}
+
+/* Flex Container */
+.pricing-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+/* Box Style */
+.pricing-box {
+  background-color: #fff;
+  color: #333;
+  flex: 1;
+  min-width: 300px;
+  padding: 40px 30px;
+  border-radius: 10px;
+  position: relative;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 350px;
+}
+
+.highlight {
+  background-color: #002060;
+  color: white;
+}
+
+/* Pricing Text */
+.pricing-box h3 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.unit {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.desc {
+  font-size: 15px;
+  flex-grow: 1;
+}
+
+
+
+/* Button */
+.btn {
+  background-color: #ffb703;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ffa200;
+}
+
+
+
+
+
+.footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 50px 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-section {
+            flex: 1 1 220px;
+            min-width: 200px;
+        }
+
+        .footer-section h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #ffffff;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .footer-section p {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar fixed-top bg-light px-4 py-2 d-flex justify-content-between align-items-center">
+        <a class="navbar-brand" href="https://iconflux.com/">
+            <img src="images/logo.png" alt="Company Logo" class="img-fluid logo-img">
+        </a>
+
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+        <i class="fa-solid fa-xmark" id="close-icon"></i>
+
+        <ul class="nav flex-column flex-md-row align-items-start align-items-md-center" id="menu-links">
+            <li class="nav-item mx-2 my-2 my-md-0">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item mx-2 my-2 my-md-0">
+                <a class="nav-link" href="service.html">Service</a>
+            </li>
+            <li class="nav-item mx-2 my-2 my-md-0">
+                <a class="nav-link" href="hire team.html">Hire Team</a>
+            </li>
+            <li class="nav-item mx-2 my-2 my-md-0">
+                <a class="nav-link" href="portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item mx-2 my-2 my-md-0">
+                <a class="nav-link" href="contact.html">Contact  Us</a>
+            </li>
+            <li class="nav-item mx-2 my-2 my-md-0">
+                <button type="button" class="btn btn-dark px-3 py-1" id="nav-btn">Get a Quote</button>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Content -->
+                <div class="col-lg-6 hero-content">
+                    <h6 class="mt-3">HIRE OFFSHORE DEVELOPER</h6>
+                    <h2>Hire Dedicated Web and Mobile App Developers India</h2>
+                    <p class="mt-3">Expertise· Efficiency · Innovation</p>
+                    <p>Elevate your software development capabilities through our team of certified and experienced
+                        developers</p>
+                    <button class="btn btn-yellow">Explore Services</button>
+                </div>
+                <!-- Right Image -->
+                <div class="col-lg-6 hero-img text-center">
+                    <img src="images/hire_team.png" alt="Laptop Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Boxess-->
+    <div class="hover-box-container">
+        <div class="hover-box">
+            <h4>Transforming Ideas into Intuitive UI/UX Designs</h4>
+            <p>We build interactive designs supported by extensive market, customer, and competitive research. Taking a
+                unique design thinking approach, we find the perfect balance between UI and UX.</p>
+        </div>
+
+        <div class="hover-box">
+            <h4>Mobile Application Development</h4>
+            <p>Our native and cross-platform mobile application development services are completed with emerging
+                technologies and the latest trends to enhance your online presence.</p>
+        </div>
+
+        <div class="hover-box">
+            <h4>Web Application Development</h4>
+            <p>We deliver reliable and advanced web solutions for your business, boasting impeccable creativity and
+                innovation. We build scalable and industry-leading applications.</p>
+        </div>
+
+        <div class="hover-box">
+            <h4>Custom Software Development</h4>
+            <p>We build custom software that matches your business requirements and integrates seamlessly with your
+                workflows to boost productivity and ROI.</p>
+        </div>
+
+        <div class="hover-box">
+            <h4>Cloud & DevOps Services</h4>
+            <p>Utilizing the power of the cloud, we help businesses move faster with DevOps practices that improve
+                deployment speed and infrastructure stability.</p>
+        </div>
+
+        <div class="hover-box">
+            <h4>Hire Dedicated Developers</h4>
+            <p>Hire top-tier dedicated developers who work closely with your team, offering flexibility, skill, and
+                efficiency for both short-term and long-term projects.</p>
+        </div>
+    </div>
+
+    <!--Languages-->
+    <section style="width: 100%; padding: 40px 0; background-color: #f9f9f9;">
+  <h2 style="font-weight: 600; font-size: 28px; text-align: center; margin-bottom: 20px;">
+    We Make Possible & Help You to Build Your Dedicated Developers Team
+  </h2>
+  <p style="font-size: 16px; line-height: 1.7; color: #333; text-align: center;">
+    We know hiring and onboarding can potentially take a very long time and while developing product & application you can’t be left behind schedule due to lack of technology expert developers. 
+    With the help of our flexible hiring model, you will get full access to the developers who are now a part of your asset and you can focus on your project plan & progress while making the quick delivery. 
+    Our experienced software development team has obtained consequential insight through continuous certification courses, online webinar by world’s technical experts and training program.
+  </p>
+</section>
+
+<section class="language-section">
+    <div class="language-grid">
+      <!-- Repeat this for all 15 -->
+      <div class="language-box">
+        <img src="images/angular.png" alt="Angular">
+        <h3>Angular</h3>
+        <p>Developer</p>
+      </div>
+      <div class="language-box">
+        <img src="images/kotlin.jpeg" alt="Kotlin">
+        <h3>Kotlin</h3>
+        <p>Developer</p>
+      </div>
+      <div class="language-box">
+        <img src="images/flutter.png" alt="Flutter">
+        <h3>Flutter</h3>
+        <p>Developer</p>
+      </div>
+      <div class="language-box">
+        <img src="images/ios.jpeg" alt="iOS">
+        <h3>iOS</h3>
+        <p>Developer</p>
+      </div>
+      <div class="language-box">
+        <img src="images/android.jpeg" alt="Android">
+        <h3>Android</h3>
+        <p>Developer</p>
+      </div>
+      
+      <div class="language-box">
+        <img src="images/swift.jpeg" alt="Swift">
+        <h3>Swift</h3>
+        <p>Developer</p>
+      </div>
+      <div class="language-box">
+        <img src="images/java.png" alt="Java">
+        <h3>Java</h3>
+        <p>Developer</p>
+      </div>
+      <div class="language-box">
+        <img src="images/golang.png" alt="GoLang">
+        <h3>GoLang</h3>
+        <p>Developer</p>
+      </div>
+      <div class="language-box">
+        <img src="images/laravel.png" alt="Laravel">
+        <h3>Laravel</h3>
+        <p>Developer</p>
+      </div>
+      <div class="language-box">
+        <img src="images/php.png" alt="PHP">
+        <h3>PHP</h3>
+        <p>Developer</p>
+      </div>
+
+      <div class="language-box">
+        <img src="images/nodejs.png" alt="Node.js">
+        <h3>Node.js</h3>
+        <p>Developer</p>
+      </div>
+      <div class="language-box">
+        <img src="images/mern.jpeg" alt="MERN Stack">
+        <h3>MERN Stack</h3>
+        <p>Developer</p>
+      </div>
+      <div class="language-box">
+        <img src="images/react_native.png" alt="React">
+        <h3>React</h3>
+        <p>Developer</p>
+      </div>
+      <div class="language-box">
+        <img src="images/zamarin.png" alt="Xamarin">
+        <h3>Xamarin</h3>
+        <p>Developer</p>
+      </div>
+      <div class="language-box">
+        <img src="images/c.png" alt="C++">
+        <h3>C++</h3>
+        <p>Developer</p>
+      </div>
+    </div>
+  </section>
+
+<!--Sales-->
+<section class="pricing-section">
+  <h2>Build Your Own Extended Team</h2>
+  <p class="subheading">
+    Fully Signed NDA · Code Standard & Security · Simple & Transparent Pricing
+  </p>
+
+  <div class="pricing-container">
+    <!-- Box 1 -->
+    <div class="pricing-box">
+      <h3>$20</h3>
+      <p class="unit">Hourly (USD)</p>
+      <p class="desc">Signed the NDA and Start with Hourly Bases</p>
+      <button class="btn">Schedule Interview</button>
+    </div>
+
+    <!-- Box 2 (Blue background box) -->
+    <div class="pricing-box highlight">
+      <h3>$2880</h3>
+      <p class="unit">Monthly (USD)</p>
+      <p class="desc">4 to 6 Years of Experience Developer with Monthly Dedicated</p>
+      <button class="btn">Schedule Interview</button>
+    </div>
+
+    <!-- Box 3 -->
+    <div class="pricing-box">
+      <h3>$14000</h3>
+      <p class="unit">Monthly (USD)</p>
+      <p class="desc">Build a Scrum Team of 5 Developers</p>
+      <button class="btn">Schedule Interview</button>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li>Flutter App Development</li>
+                    <li>MEAN Stack Development</li>
+                    <li>MERN Stack Development</li>
+                    <li>Trending Technologies</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li>Mobile App Development</li>
+                    <li>Web App Development</li>
+                    <li>Custom Software Development</li>
+                    <li>Software Product Development</li>
+                    <li>Hire Dedicated Developers</li>
+                    <li>Cloud and DevOps</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Solutions</h3>
+                <ul>
+                    <li>Intranet Portal Solution</li>
+                    <li>HRMS Solution</li>
+                    <li>Assets Management Solutions</li>
+                    <li>EV Solutions</li>
+                    <li>Channel Loyalty Program Solutions</li>
+                    <li>Warranty Management Solution</li>
+                    <li>Visitor Management Solution</li>
+                    <li>Meeting Room Booking Solution</li>
+                    <li>Vendor Portal Solution</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <a href="index.html"><li>About us</li></a>
+                    <a href="service.html"><li>Career</li></a>
+                    <a href="portfolio.html"><li>Life at IConflux</li></a>
+                    <a href="contact.html"><li>Contact us</li></a>
+                </ul>
+                <h3>Get in touch</h3>
+                <p>info@iconflux.com</p>
+                <p>Follow us on</p>
+                <!-- You can place icons here -->
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
